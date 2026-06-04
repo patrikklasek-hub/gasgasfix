@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GASFIX | Official Workshop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">GAS<span>FIX</span></div>
+        <nav>
+            <button class="nav-btn active" data-target="home">DOMŮ</button>
+            <button class="nav-btn" data-target="diag">DIAGNOSTIKA</button>
+            <button class="nav-btn" data-target="logs">DENÍK</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="view active">
+            <div class="hero-card">
+                <h1>GET ON THE GAS</h1>
+                <p>Profesionální správa a diagnostika pro tvůj stroj.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-red" onclick="app.nav('diag')">HLEDAT ZÁVADU</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="diag" class="view">
+            <div class="card">
+                <div id="diag-content">
+                    <h2 id="question">Načítání systému...</h2>
+                    <div id="options" class="button-stack"></div>
+                </div>
+                <button id="restart-diag" class="btn btn-outline" style="display:none">ZNOVU</button>
+            </div>
+        </section>
+
+        <section id="logs" class="view">
+            <div class="card">
+                <h2>SERVISNÍ ZÁZNAMY</h2>
+                <form id="service-form" class="form">
+                    <div class="input-group">
+                        <input type="date" id="date" required>
+                        <input type="text" id="mth" placeholder="MTH / KM" required>
+                    </div>
+                    <textarea id="desc" placeholder="PROVEDENÉ PRÁCE..." rows="3" required></textarea>
+                    <button type="submit" class="btn btn-red">ULOŽIT ZÁZNAM</button>
+                </form>
+                <div id="history" class="history-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
